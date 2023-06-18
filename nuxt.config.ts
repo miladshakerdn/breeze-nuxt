@@ -12,4 +12,5 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["./utils"],
   },
+  // devtools: { enabled: true },
 });

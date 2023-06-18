@@ -1,4 +1,10 @@
-export default defineNuxtRouteMiddleware(async () => {
+// import { useUser, fetchCurrentUser } from "~/composables/useAuth";
+
+export default defineNuxtPlugin(async () => {
   const user = useUser();
-  if (!user.value) return navigateTo("/login", { replace: true });
+
+  // Skip if already initialized on server
+  if (user.value !== undefined) return;
+
+  // user.value = await fetchCurrentUser();
 });
